@@ -1,5 +1,7 @@
-button {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
+.max-width {
+  width: 100%;
+}
+
+.content {
+  padding: 32px;
 }

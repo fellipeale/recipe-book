@@ -4,16 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { CoreModule } from './core/core.module';
 import { RecipeModule } from './recipe/recipe.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule,
-    HttpModule,
+    SharedModule,
+    CoreModule,
 
     // features
     RecipeModule,
@@ -22,8 +20,12 @@ import { RecipeModule } from './recipe/recipe.module';
     // because features declare routes more specific than the ones
     // declared at AppRoutingModule.
     AppRoutingModule,
-    CoreModule
   ],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

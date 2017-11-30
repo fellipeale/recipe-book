@@ -1,30 +1,18 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { MatGridListModule, MatToolbarModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-
-    MatButtonModule,
-    MatGridListModule,
-    MatToolbarModule
-  ],
   exports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-
-    MatButtonModule,
-    MatGridListModule,
-    MatToolbarModule
-  ],
-  providers: [],
-  declarations: []
+    BrowserModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    HttpModule,
+    RouterModule
+  ]
 })
 export class CoreModule {
 

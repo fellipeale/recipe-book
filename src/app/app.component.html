@@ -1,15 +1,24 @@
-<div class="container">
+<div>
   <mat-toolbar color="primary">
     <span>Livro de Receitas</span>
   </mat-toolbar>
 </div>
-<div>
-  <mat-grid-list class="recipe-list" cols="2">
-    <mat-grid-tile class="recipe-tile" *ngFor="let h of numbers" gutterSize="10">
-      <app-recipe></app-recipe>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div class="content">
+  <div fxLayout="row" fxLayoutAlign="space-between none" fxLayoutWrap>
+    <mat-card fxFlex="grow">
+      <mat-card-content>
+        <mat-form-field class="max-width">
+          <input matInput placeholder="Recipe URL">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="right">
+        <button mat-raised-button color="primary">Load</button>
+        <button mat-button>New</button>
+      </mat-card-actions>
+    </mat-card>
+    <app-recipe *ngFor="let h of numbers"></app-recipe>
+  </div>
 </div>
-<button mat-fab color="primary">
+<!-- <button mat-fab color="primary">
   <i class="material-icons">add</i>
-</button>
+</button> -->
