@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { RecipeFormComponent } from './recipe-form.component';
 
 @Component({
   selector: 'app-recipe-url',
@@ -21,7 +22,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class RecipeUrlComponent implements OnInit {
-  cardState: String;
+  cardState = 'out';
 
   constructor() { }
 

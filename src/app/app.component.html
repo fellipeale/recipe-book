@@ -1,11 +1,8 @@
 <div>
   <mat-toolbar color="primary">
-    <span>Livro de Receitas</span>
+    <a routerLink="/">Livro de Receitas</a>
   </mat-toolbar>
 </div>
 <div class="content">
-  <div fxLayout="row" fxLayoutAlign="space-between none" fxLayoutWrap>
-    <app-recipe-url fxFlexOffset="20" fxFlex="60"></app-recipe-url>
-    <app-recipe *ngFor="let h of numbers"></app-recipe>
-  </div>
+  <router-outlet></router-outlet>
 </div>
