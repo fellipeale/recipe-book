@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RecipeUrlComponent } from './recipe-url.component';
 import { RecipeFormComponent } from './recipe-form.component';
 import { RecipeListComponent } from './recipe-list.component';
+import { RecipeFormItemComponent } from './recipe-form-item.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { RecipeListComponent } from './recipe-list.component';
     RecipeComponent,
     RecipeUrlComponent,
     RecipeFormComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeFormItemComponent
   ], 
   entryComponents: [
     RecipeFormComponent

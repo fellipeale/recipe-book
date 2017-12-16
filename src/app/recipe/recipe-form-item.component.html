@@ -1,0 +1,14 @@
+<ol>
+  <h2>{{title}}</h2>
+  <li *ngFor="let value of values; let i = index">
+    <mat-form-field class="max-width">
+      <input matInput [placeholder]="step" ([value])="value">
+      <button mat-button matSuffix mat-icon-button aria-label="Add" (click)="addItem()">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+      <button mat-button matSuffix mat-icon-button aria-label="Remove" (click)="removeItem(i)" *ngIf="showRemoveButton()">
+        <mat-icon>remove_circle</mat-icon>
+      </button>
+    </mat-form-field>
+  </li>
+</ol>

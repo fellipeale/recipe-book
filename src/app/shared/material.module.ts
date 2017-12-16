@@ -9,7 +9,8 @@ import {
   MatFormFieldModule,
   MatGridListModule,
   MatInputModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatIconModule
 } from '@angular/material';
 
 @NgModule({
@@ -19,6 +20,7 @@ import {
     MatDialogModule,
     MatFormFieldModule,
     MatGridListModule,
+    MatIconModule,
     MatInputModule,
     MatToolbarModule
   ]
