@@ -7,11 +7,14 @@ import { AppRoutingModule } from './app.routing';
 import { RecipeModule } from './recipe/recipe.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
 
 @NgModule({
   imports: [
     SharedModule,
     CoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
 
     // features
     RecipeModule,
@@ -19,7 +22,7 @@ import { SharedModule } from './shared/shared.module';
     // AppRoutingModule must come after our features (above),
     // because features declare routes more specific than the ones
     // declared at AppRoutingModule.
-    AppRoutingModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent

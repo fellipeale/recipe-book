@@ -1,8 +1,8 @@
 <ol>
   <h2>{{title}}</h2>
-  <li *ngFor="let value of values; let i = index">
+  <li *ngFor="let value of itemValues; let i = index">
     <mat-form-field class="max-width">
-      <input matInput [placeholder]="step" ([value])="value">
+      <input matInput [placeholder]="step" [ngModel]="itemValues[i]" (change)="onValueUpdate($event.target.value, i)">
       <button mat-button matSuffix mat-icon-button aria-label="Add" (click)="addItem()">
         <mat-icon>add_circle</mat-icon>
       </button>

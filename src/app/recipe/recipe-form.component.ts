@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Recipe } from './recipe.type';
 
 @Component({
@@ -8,14 +11,30 @@ import { Recipe } from './recipe.type';
 })
 export class RecipeFormComponent implements OnInit {
 
+  @Input() recipeId?: number;
+
+  recipesCollection: AngularFirestoreCollection<Recipe>;
   recipe: Recipe;
 
-  constructor() { } 
+  constructor(private db: AngularFirestore, private router: Router, private snackBar: MatSnackBar) {
+    this.recipesCollection = db.collection<Recipe>('recipes');
+  }
 
   ngOnInit() {
     this.recipe = new Recipe();
     this.recipe.ingredients = [''];
     this.recipe.steps = [''];
+  }
+
+  save() {
+    this.recipe.id = this.db.createId();
+    this.recipesCollection.add(JSON.parse(JSON.stringify(this.recipe)))
+      .then(() =>  {
+        this.snackBar.open('Receita salva', 'Fechar', {
+          duration: 1000
+        });
+        this.router.navigate(['']);
+      });
   }
 
 }

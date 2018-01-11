@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-form-item',
@@ -7,9 +7,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RecipeFormItemComponent implements OnInit {
 
+  itemValues: string[];
   @Input() title: string;
   @Input() step: string;
-  @Input() values: string[]; 
+  @Input()
+  get values() {
+    return this.itemValues;
+  }
+
+  set values(val) {
+    this.itemValues = val;
+    this.valuesChange.emit(this.itemValues);
+  }
+
+  @Output() valuesChange = new EventEmitter();
 
   constructor() { }
 
@@ -26,6 +37,10 @@ export class RecipeFormItemComponent implements OnInit {
 
   showRemoveButton(): boolean {
     return this.values.length > 1;
+  }
+
+  onValueUpdate(value: string, index: number) {
+    this.itemValues[index] = value;
   }
 
 }

@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    RouterModule
+    RouterModule    
   ]
 })
 export class CoreModule {
