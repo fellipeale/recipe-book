@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   signup() {
     this.authService.signup(this.email, this.password)
-    .then(_ => {
+    .then(() => {
       this.snackBar.open(`${this.email} cadastrado com sucesso`, 'Fechar', {
         duration: 2000
       });
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.email, this.password)
-      .then(_ => {
+      .then(() => {
         this.snackBar.open(`Bem vindo ${this.email}`, 'Fechar', {
           duration: 2000
         });

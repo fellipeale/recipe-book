@@ -1,8 +1,9 @@
 export class Recipe {
 
-    id: String;
-    title: String;
+    id: string;
+    title: string;
     ingredients: string[];
-    steps: string[]
+    steps: string[];
+    owner: string;
 
 }
