@@ -31,7 +31,7 @@ export class RecipeFormComponent implements OnInit {
     this.recipesCollection.add(JSON.parse(JSON.stringify(this.recipe)))
       .then(() =>  {
         this.snackBar.open('Receita salva', 'Fechar', {
-          duration: 1000
+          duration: 2000
         });
         this.router.navigate(['']);
       });

@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <p *ngIf="!(authService.user | async)">Clique <a routerLink="/login">aqui</a> para fazer login</p>
+  <p *ngIf="authService.user | async">{{ (authService.user | async)?.email }}</p>
+
+  <button mat-icon-button (click)="logout()" *ngIf="authService.user | async">
+    <i class="material-icons">exit_to_app</i>
+  </button>
+</div>
+

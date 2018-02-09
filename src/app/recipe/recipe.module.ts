@@ -23,7 +23,7 @@ import { RecipeFormItemComponent } from './recipe-form-item.component';
     RecipeFormComponent,
     RecipeListComponent,
     RecipeFormItemComponent
-  ], 
+  ],
   entryComponents: [
     RecipeFormComponent
   ]

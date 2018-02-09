@@ -3,13 +3,15 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
   exports: [
+    AuthModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    RouterModule    
+    RouterModule
   ]
 })
 export class CoreModule {
