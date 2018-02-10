@@ -10,6 +10,8 @@
       <app-recipe-form-item title="Ingredientes" step="Ingrediente" [(values)]="recipe.ingredients"></app-recipe-form-item>
       <br>
       <app-recipe-form-item title="Modo de Preparo" step="Passo" [(values)]="recipe.steps"></app-recipe-form-item>
+      <br>
+      <input type="file" (change)="selectFile($event)">
     </mat-card-content>
 
     <mat-card-actions align="right">

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+
+import { Recipe } from './recipe.type';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,11 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeListComponent implements OnInit {
 
-  numbers = [1, 2, 3, 4, 5, 6, 7];
+  recipesCollection: AngularFirestoreCollection<Recipe>;
+  recipesList: Observable<Recipe[]>;
 
-  constructor() { }
+  constructor(private db: AngularFirestore) {
+    this.recipesCollection = db.collection<Recipe>('recipes', ref => ref.orderBy('lastUpdated', 'desc'));
+  }
 
   ngOnInit() {
+    this.recipesList = this.recipesCollection.valueChanges();
   }
 
 }

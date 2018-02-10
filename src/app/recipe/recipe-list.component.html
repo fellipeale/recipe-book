@@ -1,4 +1,6 @@
-<div fxLayout="row" fxLayoutAlign="space-between none" fxLayoutWrap>
-  <app-recipe-url fxFlexOffset="20" fxFlex="60"></app-recipe-url>
-  <app-recipe *ngFor="let h of numbers"></app-recipe>
+<div fxLayout="row" fxLayoutAlign="space-evenly none">
+  <app-recipe-url fxFlex="60"></app-recipe-url>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-evenly none" fxLayoutWrap>
+  <app-recipe *ngFor="let recipe of recipesList | async" [recipe]="recipe"></app-recipe>
 </div>
